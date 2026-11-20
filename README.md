@@ -75,9 +75,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 php_version: system
 ```
 
-By default, the role installs the PHP version provided by the target EL or Fedora
-repositories. Set `php_version` to `70` or `56` to request the legacy PHP 7.0 or
-5.6 package sets where they are available.
+The role installs PHP packages from the target distribution repositories. PHP 5.6 and 7.0 are no longer supported.
 
 ## [Requirements](#requirements)
 
