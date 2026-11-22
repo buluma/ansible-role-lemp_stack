@@ -46,8 +46,8 @@ lemp_sendmail_packages:
     - sendmail-cf
     - make
     - bsd-mailx
-lemp_web_user: "{{ 'nginx' if ansible_os_family == 'RedHat' else 'www-data' }}"
-lemp_document_root: "{{ '/usr/share/nginx/html' if ansible_os_family == 'RedHat' else '/var/www/html' }}"
-lemp_nginx_cache_directory: "{{ '/var/lib/nginx/cache' if ansible_os_family == 'RedHat' else '/var/cache/nginx' }}"
-lemp_php_session_directory: "{{ '/var/lib/php/session' if ansible_os_family == 'RedHat' else '/var/lib/php/sessions' }}"
+lemp_web_user: "{{ 'nginx' if ansible_facts['os_family'] == 'RedHat' else 'www-data' }}"
+lemp_document_root: "{{ '/usr/share/nginx/html' if ansible_facts['os_family'] == 'RedHat' else '/var/www/html' }}"
+lemp_nginx_cache_directory: "{{ '/var/lib/nginx/cache' if ansible_facts['os_family'] == 'RedHat' else '/var/cache/nginx' }}"
+lemp_php_session_directory: "{{ '/var/lib/php/session' if ansible_facts['os_family'] == 'RedHat' else '/var/lib/php/sessions' }}"
 lemp_php_fpm_service: php-fpm

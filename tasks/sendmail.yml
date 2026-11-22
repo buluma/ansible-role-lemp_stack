@@ -1,7 +1,7 @@
 ---
 - name: sendmail | Install Sendmail
   ansible.builtin.package:
-    name: "{{ lemp_sendmail_packages[ansible_os_family] }}"
+    name: "{{ lemp_sendmail_packages[ansible_facts['os_family']] }}"
     state: present
 - name: sendmail | Remove Postfix
   ansible.builtin.package:
